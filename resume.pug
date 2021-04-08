@@ -1,0 +1,94 @@
+include mixins.pug
+style
+    include:scss resume.scss
+
+header#heading
+    .info
+        h1 Alireza Tajik
+        span Software Engineer
+
+        .links
+            ul
+                li
+                    a(href='mailto:alireza7192@gmail.com', target='_blank') #[+i('at')] a.tajious@gmail.com
+                li
+                    a(href='tel:+989213176895', target='_blank') #[+i('phone')] +98 921 317 6895
+                li
+                    +i('map-marker')
+                    |
+                    | Tehran, Iran
+            ul
+                li
+                    a(href='https://www.linkedin.com/in/alirezatjk', target='_blank') #[+i('linkedin')] linkedin.com/in/alirezatjk
+
+main
+    article#content
+        +block('Summary')
+            p Software Engineer with over 5 years of programming using Python and Golang and 1 year coaching experience.
+
+        +block('Experience', false)
+            +job("Software Engineer", "Sheypoor", "https://www.sheypoor.com", "2017-03 - Ongoing", "Tehran, Iran")
+                p Sheypoor is one of the lead classifieds marketplaces in Iran with over 10M users.
+
+                h4 Microservices Development Including:
+                ul
+                    li Design and launch a lightweight rate limiter with a maximum overhead of 2 millisecond alongside nginx reducing fraud by over %95.
+                    li Rewrite user event collection service providing real time aggregation, using under %90 resources.
+                    li Implement a listing aggregation service with over 200m listings providing services to clients.
+                    li Design and develop a machine learning framework, automating model training procedures and automatically creating APIs.
+
+                h4 Test Infrastructure Including:
+                ul
+                    li Implement UI test automation infrastructure inspired by SauceLabs reducing expenses by %90.
+                    li Dockerized automated test scripts, allowing them to run in parallel reducing test duration by %70.
+                    li Implement smoke test mechanism to validate test environment health saving up to 30 minutes on test pipeline.
+                    li Implement Python libraries for automated tests (Robot Framework) increasing productivity of Test Engineers by over %50.
+
+                h4 Coaching Experiences Including:
+                ul
+                    li Set weekly cross-team meetings, assigning tasks, documentations, reducing communication bottlenecks.
+                    li Weekly knowledge sharing meetings, improving team productivity.
+                    li Include unit tests and code review in workflow, improving code quality and eliminating bugs by over 70%.
+                    li Participate in hiring process and interviews.
+
+            - for (let i = 0; i < 8; i++)
+            br
+
+            +job("Technical Consultant", "Planhub", "https://planhub.ir", "2020-5 - Ongoing (Part Time)", "Tehran, Iran")
+                p Planhub is a business consultant firm providing marketing, content and technical solutions for small businesses.
+
+                h4 Infrastructure Development Including:
+                ul
+                    li Setup local Git server, implement CI/CD and improving development speed by %200.
+                    li Migrate services to container based solutions (Docker) improving productivity.
+
+                h4 Coach Team Members Including:
+                ul
+                    li Design Agile workflow based on scrum methodology, increasing productivity.
+                    li Weekly workshop sessions to improve team productivity and code quality.
+                    li Lead planning and retrospective meetings assigning tasks and removing bottlenecks.
+
+            +job("Junior Python Developer", "Bultan", "https://www.bultan.net", "2016-2 - 2017-04", "Tehran, Iran")
+                p Bultan is a news aggregation service that collects and provides news based on user personalization.
+
+                h4 Development and maintenance of crawlers:
+                ul
+                    li Develop over 500 crawlers for all variety of websites using Scrapy.
+                    li Monitor and maintain crawlers using Django.
+
+
+    aside#sidebar
+        +block('Tools/Skills', false)
+            +rateItem('Programming languages', 'Python, Golang', 9)
+            +rateItem('Frameworks', 'Django, Flask, FastAPI, Gin, FastHTTP, etc...', 9)
+            +rateItem('Databases', 'PostgreSQL, Elasticsearch, Redis', 9)
+            +rateItem('Brokers & Event Streaming', 'Kafka, RabbitMQ', 9)
+            +rateItem('Containerization', 'Docker', 9)
+            +rateItem('Concurrency & Job Distribution', 'AsyncIO, Celery', 9)
+            +rateItem('Project Management & Documentation', 'Jira, Confluence, Miro, Pivotal Tracker', 9)
+            +rateItem('Version Controllers', 'Git', 9)
+            +rateItem('Familiar with', 'Javascript, MongoDB, Apache Druid, Kong, Airflow, Drone, Minio, etc...', 9)
+
+        +block('Languages', false)
+            +rateItem('English: Advanced', null, 6)
+            +rateItem('Persian: Native', null, 10)
